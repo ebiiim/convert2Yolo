@@ -290,7 +290,7 @@ class VOC:
                     "objects": obj
                 }
 
-                data[root.find("filename").text.split(".")[0]] = annotation
+                data[".".join(root.find("filename").text.split(".")[:-1])] = annotation
 
                 printProgressBar(progress_cnt + 1, progress_length,
                                  prefix='VOC Parsing:'.ljust(15), suffix='Complete', length=40)
